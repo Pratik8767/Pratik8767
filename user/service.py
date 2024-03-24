@@ -3,7 +3,6 @@ from user.model import UserModel
 from utils.db_session import execute_custom_delete_update_query,engine
 
 
-
 class UserServices:
     def create_user(user:UserModel):
         try:
