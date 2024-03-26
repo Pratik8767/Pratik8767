@@ -44,6 +44,7 @@ class Userservices:
                 return 'succesfully update!!'
             else:
                 return "user cant exist"
+            
     def deleteuser( kunal:UserModel):
          query =f'''select user_id from dev.tbl_d_user where user_id='{kunal.user_id}' '''
          execute_custom_query(query)

@@ -9,3 +9,4 @@ class BranchModel(BaseModel):
     create_date : Optional[date] = date.today()
     update_date : Optional[date] = None
     created_at : Optional[date] = None
+    
