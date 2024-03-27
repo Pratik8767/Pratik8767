@@ -1,29 +1,24 @@
-from fastapi import APIRouter
 from sqlalchemy import text
+from fastapi import APIRouter, FastAPI
+from user.model import UserModel
+from user.services import UserServices
+from utils.db_session import execute_custom_delete_update_query, engine
 
-from user.user_model import UserModel
-from user.user_services import UserServices
-
-
-class UserApi():
-    router=APIRouter()
-
-    @router.get("/get_users")
-    def get_user():
-       return UserServices.get_users()
+class UserAPI:
+    router = APIRouter()
     
     @router.post("/create_user")
-    def create_user(user:UserModel):
-       return UserServices.create_user(user) 
-
-    @router.put("/update_user") 
-    def update_user(user:UserModel)  :
-       return UserServices.update_user(user)     
-
-              
-    @router.delete("/delete_user/{id}")
-    def delete_user(id:str):
-       return UserServices.delete_user(id)   
-
-    
-
+    def createUser(user:UserModel):
+       return UserServices.createUser(user)  
+     
+    @router.get("/read_users")
+    def readuser():
+      return UserServices.readuser()  
+       
+    @router.delete('/delete_user/{id}')
+    def deleteuser(id:str):
+         return UserServices.deleteuser(id)
+            
+    @router.put("/update_user")
+    def updateuser(user:UserModel):
+         return UserServices.updateuser(user)  

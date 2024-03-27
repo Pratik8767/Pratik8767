@@ -1,11 +1,11 @@
 from fastapi import FastAPI
+from branch.branch_api import BranchAPI
 from result.api import ResultAPI
 from schedule.api import Schedule_Api
 from attendence.api import Attendance
 from user.user_api import UserApi
 from event.event_api import EventAPI
 from library.api import LibraryAPI
-from branch.api import BranchAPI
 
 
 
