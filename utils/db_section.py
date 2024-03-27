@@ -25,12 +25,26 @@ def is_valid_uuid(uuid_string):
         return False
 
 
+<<<<<<< HEAD
 def execute_custom_query(query_str):
     with engine.connect() as connection:
         result = connection.execute(text(query_str))
         rows = result.fetchall()
         records = [row[0] for row in rows]
         return records
+=======
+def execute_custom_query(query_str, list_col: list):
+    data=[]
+    dt={}
+    with engine.connect() as connection:
+        result = connection.execute(text(query_str))
+        rows = result.fetchall()
+        for row in rows:
+            for i in range(len(list_col)):
+                dt[list_col[i]]=row[i]
+            data.append(dt)
+        return data
+>>>>>>> origin/branch_harshal
 
 
 def execute_custom_delete_update_query(query_str):
