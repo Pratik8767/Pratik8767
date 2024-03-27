@@ -2,7 +2,6 @@ from fastapi import APIRouter
 from sqlalchemy import text
 from result.model import Resultmodel
 from result.services import Result_services
-from utils.db_section import execute_custom_delete_update_query, execute_custom_query,engine
 
 
 class ResultAPI:

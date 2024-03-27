@@ -1,6 +1,6 @@
 from sqlalchemy import text
 from result.model import Resultmodel
-from utils.db_section import execute_custom_delete_update_query, execute_custom_query,engine
+from utils.db_session import execute_custom_delete_update_query, execute_custom_query,engine
 
 
 class Result_services:
@@ -22,14 +22,14 @@ class Result_services:
     def createuser(data:Resultmodel):
         try:
             query = f'''select result_id from dev.tbl_f_result where result_id = '{data.result_id}' '''
-            execute_custom_query(query)#check kar sathi
+            execute_custom_query(query)
 
-            with engine.connect() as connection:#
+            with engine.connect() as connection:
                 result = connection.execute(text(query))
                 rows = result.fetchall()
                 if len(rows)==0:
                         query = f''' insert into dev.tbl_f_result(result_id) values('{data.result_id}') '''
-                        execute_custom_delete_update_query(query)#data
+                        execute_custom_delete_update_query(query)
                         return "Successfully Created!!"
                 else:
                         return "User_id Already Exixt!!"
@@ -42,7 +42,7 @@ class Result_services:
             with engine.connect() as connection:
                 result = connection.execute(text(query))
                 rows = result.fetchall()
-                if len(rows)!=0:#0:0 true aahe he
+                if len(rows)!=0:
                     query =f'''update dev.tbl_f_result set total_marks='{data.total_marks}',obtain_marks=
                     '{data.obtain_marks}' '''
                     execute_custom_delete_update_query(query)
@@ -59,7 +59,7 @@ class Result_services:
             with engine.connect() as connection:
                 result = connection.execute(text(query))
                 rows = result.fetchall()
-                if len(rows)!=0:#0:0 true aahe he
+                if len(rows)!=0:
                     query =f'''delete from dev.tbl_f_result where result_id = '{data.result_id}' '''
                     execute_custom_delete_update_query(query)
                     return 'succesfully deleted!!'
