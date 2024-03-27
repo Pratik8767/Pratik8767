@@ -24,7 +24,3 @@ app.include_router(ResultAPI.router)
 
 
 
-
-
-
-

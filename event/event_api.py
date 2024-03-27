@@ -29,4 +29,3 @@ class EventAPI:
         @router.put("/Update_event")
         def update_event(event:EventModel):
                 return EventServices.Update_event(event)
-       

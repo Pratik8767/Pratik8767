@@ -11,3 +11,4 @@ class EventModel(BaseModel):
     organized_by:str
     event_type:str
     meeting_link:str
+
