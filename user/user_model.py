@@ -2,7 +2,6 @@ from datetime import date
 from typing import Optional
 from pydantic import BaseModel 
 
-
 class UserModel(BaseModel):
      user_id       :str
      first_name:str
@@ -18,4 +17,3 @@ class UserModel(BaseModel):
      type :str
      create_date :  Optional[date]=date.today() 
      update_date :Optional[date]=None
-

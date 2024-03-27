@@ -3,7 +3,6 @@ from sqlalchemy import text
 from result.model import Resultmodel
 from result.services import Result_services
 
-
 class ResultAPI:
     router=APIRouter()
 
