@@ -3,7 +3,10 @@ from sqlalchemy.orm import sessionmaker
 from utils.config import database_url
 from sqlalchemy import text
 import uuid
+<<<<<<< HEAD
 import json
+=======
+>>>>>>> origin/branch_Datta
 
 
 SQLALCHEMY_DATABASE_URL = database_url
@@ -30,8 +33,12 @@ def execute_custom_query(query_str):
     with engine.connect() as connection:
         result = connection.execute(text(query_str))
         rows = result.fetchall()
+<<<<<<< HEAD
         print(rows)
         records = [{"user_id": row[0], "first_name": row[1], "last_name": row[2]} for row in rows]
+=======
+        records = [row[0] for row in rows]
+>>>>>>> origin/branch_Datta
         return records
 
 
