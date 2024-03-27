@@ -3,7 +3,7 @@ from sqlalchemy import text
 
 from attendence.model import AttendanceModel
 from attendence.services import AttendanceServices
-from utils.db_section import execute_custom_delete_update_query, execute_custom_query,engine
+from utils.db_session import execute_custom_delete_update_query, execute_custom_query,engine
 
 
 class Attendance:
