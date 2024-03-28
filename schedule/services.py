@@ -1,6 +1,6 @@
 from sqlalchemy import text
 from schedule.model import Schedulemodel
-from utils.db_section import execute_custom_delete_update_query, execute_custom_query,engine
+from utils.db_session import execute_custom_query,engine,execute_custom_delete_update_query
 
 class Schedule_services:
      

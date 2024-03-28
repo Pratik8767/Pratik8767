@@ -1,8 +1,7 @@
 from sqlalchemy import text
 from fastapi import APIRouter, FastAPI
-from user.model import UserModel
-from user.services import UserServices
-from utils.db_session import execute_custom_delete_update_query, engine
+from user.user_model import UserModel
+from user.user_services import UserServices
 
 class UserAPI:
     router = APIRouter()
